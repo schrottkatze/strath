@@ -12,12 +12,12 @@ Rust developers hate it, Python developers fear it, and C developers make it bli
 \`\`´´ this makes a multiline comment
 
 ### If, else if/elif, else
-`¿??/condition\\? | ()` - if  
-`?>/condition\\? | ()` - elif/else if  
-`\>?/condition\\? | ()` - else  
+`¿??/condition\? | ()` - if  
+`?>/condition\? | ()` - elif/else if  
+`\>?/condition\? | ()` - else  
 
 After `??` and `?>` either a `$` or `€` to declare if all conditions are to be true or false respectivly  
-Two variables will be compared by an if statment without "==" eg `¿??$/1 1\\? | ()` compares if 1 == 1 and if that result needs to be true to run the code in between the two round brackets
+Two variables will be compared by an if statment without "==" eg `¿??$/1 1\? | ()` compares if 1 == 1 and if that result needs to be true to run the code in between the two round brackets
 
 ### Variable Types
 `}}type{{` uses the standard types like int, str, float, etc
