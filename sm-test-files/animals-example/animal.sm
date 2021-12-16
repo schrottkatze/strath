@@ -2,7 +2,8 @@
 && '++name declares an abstract class
 && all of that is, of course, a statement so ¡!
 
-'++animal (
+
+&<='++animal (
  && +}}type{{ declares a property of a class
  && "+}}type{{ declares a static property of a class
 
@@ -14,7 +15,7 @@
    ¡<=/"Created animal named " + name\!;
 
    && +var refers to a property, like this. in other languages
-   && you can only assign values to static variables once in this language 
+   && you can only assign values to static variables once in this language
    ¡+name < name!;
    ¡+speed < speed!;
  )
