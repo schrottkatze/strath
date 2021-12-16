@@ -3,6 +3,7 @@
 
 && inherit via :::
 ++cat:::animal (
+<<<<<<< HEAD
    ¡+}}float{{ meowingVolume!;
   
    ### /}}string{{ name\ /}}float{{ speed\ /}}float{{ meowingVolume\ | (
@@ -27,6 +28,36 @@
       ) >? | (
          !<=/"Error: weird as fuck meowing volume."\!;
       )
+=======
+ ¡+}}float{{ meowingVolume!;
+
+ ### /}}string{{ name\ /}}float{{ speed\ /}}float{{ meowingVolume\ | (
+   && ## calls the super
+   ¡##/name, speed\!;
+   ¡+meowingVolume < meowingVolume!;
+ )
+
+ +#meow /\ | (
+   ¿??€/+meowingVolume >> 0\? | (
+      ¡<=/"*silence*"!;
+   )
+   ?>$/+meowingVolume >> 0\? | (
+      ¡<=/"mow"\!;
+   )
+   ?>$/+meowingVolume >> 2\? | (
+      ¡<=/"meow"\!;
+   )
+   ?>$/+meowingVolume >> 5\? | (
+      ¡<=/"Meow."\!;
+   )
+   ?>$/+meowingVolume >> 10\? | (
+      ¡<=/"Meow!!"\!;
+   )
+   ?>$/+meowingVolume >> 20\? | (
+      ¡<=/"MEOW!!!"\!;
+   )
+   >?/\? | (
+      !<=/"Error: weird as fuck meowing volume."\!;
+>>>>>>> 602600c8ef3124194f256b9d0ef99d3d6a418abe
    )
 )
-

@@ -1,0 +1,45 @@
+&& import via &=>
+¡&=> "animal.sm"!
+
+&& inherit via :::
+++dog:::animal (
+ ¡+}}float{{ barkVolume!;
+
+ ### /}}string{{ name\ /}}float{{ speed\ /}}float{{ barkVolume\ | (
+   && ## calls the super
+   ¡##/name, speed\!;
+   ¡+barkVolume < barkVolume!;
+ )
+
+ +#meow /\ | (
+   ¿??€/+barkVolume >> 0\? | (
+      ¡<=/"*silence*"!;
+   )
+   ?>$/+barkVolume >> 0\? | (
+      ¡<=/"bak"\!;
+   )
+   ?>$/+barkVolume >> 2\? | (
+      ¡<=/"bark"\!;
+   )
+   ?>$/+barkVolume >> 5\? | (
+      ¡<=/"Bark."\!;
+   )
+   ?>$/+barkVolume >> 10\? | (
+      ¡<=/"Bark!!"\!;
+   )
+   ?>$/+barkVolume >> 20\? | (
+      ¡<=/"BARK!!!"\!;
+   )
+   >?/\? | (
+      !<=/"Error: weird as fuck bark volume."\!;
+   )
+ )
+ +#pissOnFloor /}}bool{{ needsToGo\ | (
+  ¿??€/needsToGo true\ | (
+   ¡<= "The dog pissed on the floor!"!;
+  )
+  >?/\? | (
+   ¡<= "The dog didn't piss on the floor!"!;
+  )
+ )
+)
