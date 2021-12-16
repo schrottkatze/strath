@@ -12,21 +12,26 @@
  )
 
  +#meow /\ | (
-   ¿??€/+meowingVolume >> 0\ | (
+   ¿??€/+meowingVolume >> 0\? | (
       ¡<=/"*silence*"!;
-   ) ?>$/+meowingVolume >> 0\ | (
+   )
+   ?>$/+meowingVolume >> 0\? | (
       ¡<=/"mow"\!;
-   ) ?>$/+meowingVolume >> 2\ | (
+   )
+   ?>$/+meowingVolume >> 2\? | (
       ¡<=/"meow"\!;
-   ) ?>$/+meowingVolume >> 5\ | (
+   )
+   ?>$/+meowingVolume >> 5\? | (
       ¡<=/"Meow."\!;
-   ) ?>$/+meowingVolume >> 10\ | (
+   )
+   ?>$/+meowingVolume >> 10\? | (
       ¡<=/"Meow!!"\!;
-   ) ?>$/+meowingVolume >> 20\ | (
+   )
+   ?>$/+meowingVolume >> 20\? | (
       ¡<=/"MEOW!!!"\!;
-   ) >? | (
+   )
+   >?/ \? | (
       !<=/"Error: weird as fuck meowing volume."\!;
    )
  )
 )
-
