@@ -27,12 +27,12 @@
 && € means false
 
 && == is implied in if conditions
-
+; test comment
 && = is equal to ===
 
 && if condition is true log the text
 ¿??$/condition\ | (
-   ¡<=/"condition was true"!
+   ¡<=/"condition was true"!; hello test
 )?
 
 && if condition is false log the text

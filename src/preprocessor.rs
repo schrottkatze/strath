@@ -3,7 +3,7 @@ use fancy_regex::Regex;
 
 pub fn preprocess(raw_code: String) {
     lazy_static! {
-        static ref COMMENT_RE: Regex = Regex::new(r"(\]\].*?\[\[|&&.*\n|``(.|\n)*?´´)").unwrap();
+        static ref COMMENT_RE: Regex = Regex::new(r"(\]\].*?\[\[|&&.*\n|;.*\n|``(.|\n)*?´´)").unwrap();
     }
 
     let code = COMMENT_RE.replace_all(&raw_code, "");
