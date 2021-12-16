@@ -29,6 +29,10 @@
 && $ means true
 && € means false
 
+&& == is implied in if conditions
+
+&& = is equal to ===
+
 && if condition is true log the text
 ¿??$/condition\ |
  ¡<=/"condition was true"!
@@ -44,5 +48,12 @@
  
  #sub /\ | (
  && This code prints hello world
- !¿??$? <= "Hello World"!;
+ ¿??$? |
+  !<= "Hello World"!;
+)
+
+#sub /\ | (
+ && This code checks if input is equal to another string
+ ¿??$ /=> "hello"\? | && Takes input and compares to string
+  !<= "World!"!; Prints World!
 )
