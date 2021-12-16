@@ -1,0 +1,26 @@
+&& ++name declares a class
+&& '++name declares an abstract class
+&& all of that is, of course, a statement so ¡!
+
+¡'++animal
+ && +}}type{{ declares a property of a class
+ && "+}}type{{ declares a static property of a class
+
+ ¡"+}}string{{ name!;
+ ¡+}}string{{ speed!;
+
+ && ### declares the constructor
+ ¡### /}}string{{ name\ /speed\ |
+   ¡<=/"Created animal named " + name\!;
+
+   && +var refers to a property, like this. in other languages
+   && you can only assign values to static variables once in this language 
+   ¡+name < name!;
+   ¡+speed < speed!;
+ !
+
+ && +# declares a method
+ ¡+#walk /distance\ |
+   ¡<=/¿+name + " walked " + (+speed * +distance)?\!;
+ !
+!
