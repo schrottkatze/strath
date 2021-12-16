@@ -1,18 +1,16 @@
 use std::env;
 use std::fs;
 
+mod preprocessor;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     let file = fs::read_to_string(&args[1]).expect("Couldnt read file:");
-    println!("{:?}", multiply_strings(file, 3.5));
+
+    println!("{:?}", preprocessor::preprocess(file));
 }
 
-fn multiply_strings(str: String, multiplier: f32) -> String {
-    let mut r: String = String::from(str);
-    let rest = multiplier - (multiplier as i32) as f32;
-    let slice = &r.clone()[0..(r.len() as f32 * rest) as usize];
+fn parse_and_interpret(code: String) {
 
-    r = r.repeat(multiplier as usize);
-    r += slice;
-    r
 }
+

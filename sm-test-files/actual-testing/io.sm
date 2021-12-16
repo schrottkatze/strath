@@ -1,0 +1,25 @@
+
+&& line comment test
+
+¡<= /"Hello world!"\!
+
+¡<= ]] inline comment example [[ /"inline cmmnts work"\!
+
+``
+   big ass block comment!
+   ye boiiiii
+´´
+
+&& declare variable out as string
+¡}}string{{ out!
+
+&& take input and take it into var
+¡=> /out\!
+
+&& log out
+¡<= /out\!
+
+
+
+
+

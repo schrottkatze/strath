@@ -1,3 +1,6 @@
+&& ¡! around code means its a statement
+&& ¿? around code means its an expression
+
 #mult /}}string{{str\ /{float}num\ | (
  ¿string * float?
 )
@@ -7,16 +10,9 @@
 ]]Inline comment[[
 
 ``
- multiline comment
- indention example (comments have to be indented as well, btw):
- first level
-   second level
-      third level
-          fourth level
-               fifth level
-                     sixth level
- 
- main function has to be a thing
+   multiline comment
+   indention is 3 spaces
+   main function has to be a thing
 ´´
 
 ¡}}string{{ variable!
@@ -36,24 +32,24 @@
 
 && if condition is true log the text
 ¿??$/condition\ | (
- ¡<=/"condition was true"!
+   ¡<=/"condition was true"!
 )?
 
 && if condition is false log the text
 ¿??€/condition\ | (
- ¡<=/"condition was false"!
+   ¡<=/"condition was false"!
 )?
  
 #sub /\ | (
- && This code prints hello world
- ¿??$? | (
-  !<= "Hello World"!;
- )
+   && This code prints hello world
+   ¿??$? | (
+      !<= "Hello World"!;
+   )
 )
 
 #sub /\ | (
- && This code checks if input is equal to another string
- ¿??$ /=> "hello"\? | ( && Takes input and compares to string
-  !<= "World!"!; Prints World!
- )?
+   && This code checks if input is equal to another string
+   ¿??$ /=> "hello"\? | ( && Takes input and compares to string
+      !<= "World!"!; Prints World!
+   )?
 )
