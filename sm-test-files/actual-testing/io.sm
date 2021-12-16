@@ -3,7 +3,7 @@
 
 ¡<= /"Hello world!"\!
 
-¡<= ]] inline comment example [[ /"inline cmmnts work"\!
+¡<= ]] inline comment example [[ /"inline comments work"\!
 
 ``
    big ass block comment!
@@ -18,8 +18,4 @@
 
 && log out
 ¡<= /out\!
-
-
-
-
 

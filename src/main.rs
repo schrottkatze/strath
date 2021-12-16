@@ -10,7 +10,7 @@ fn main() {
     println!("{:?}", preprocessor::preprocess(file));
 }
 
-fn parse_and_interpret(code: String) {
+//fn parse_and_interpret(code: String) {
 
-}
+//}
 
