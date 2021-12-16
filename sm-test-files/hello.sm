@@ -34,6 +34,11 @@
  ¡<=/"condition was true"!
 ?
 
+#sub /\ | (
+ && This code prints hello world
+ ¿??$? <= "Hello World"; This is the automatic comment zone
+)
+
 && if condition is false log the text
 ¿??€/condition\ |
  ¡<=/"condition was false"!
