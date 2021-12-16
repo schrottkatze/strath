@@ -1,5 +1,6 @@
-#mult /}}string{{str\ /{float}num\ |
+#mult /}}string{{str\ /{float}num\ | (
  ¿string * float?
+)
 
 && rest line comment
 
@@ -34,26 +35,25 @@
 && = is equal to ===
 
 && if condition is true log the text
-¿??$/condition\ |
+¿??$/condition\ | (
  ¡<=/"condition was true"!
-?
+)?
 
 && if condition is false log the text
-¿??€/condition\ |
+¿??€/condition\ | (
  ¡<=/"condition was false"!
-?
-
-¿??$/condition\ |
- ¡<=
+)?
  
- #sub /\ | (
+#sub /\ | (
  && This code prints hello world
- ¿??$? |
+ ¿??$? | (
   !<= "Hello World"!;
+ )
 )
 
 #sub /\ | (
  && This code checks if input is equal to another string
- ¿??$ /=> "hello"\? | && Takes input and compares to string
+ ¿??$ /=> "hello"\? | ( && Takes input and compares to string
   !<= "World!"!; Prints World!
+ )?
 )

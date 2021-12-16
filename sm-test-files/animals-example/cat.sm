@@ -1,0 +1,32 @@
+&& import via &=>
+¡&=> "animal.sm"!
+
+&& inherit via :::
+++cat:::animal (
+ ¡+}}float{{ meowingVolume!;
+
+ ### /}}string{{ name\ /}}float{{ speed\ /}}float{{ meowingVolume\ | (
+   && ## calls the super
+   ¡##/name, speed\!;
+   ¡+meowingVolume < meowingVolume!;
+ )
+
+ +#meow /\ | (
+   ¿??€/+meowingVolume >> 0\ | (
+      ¡<=/"*silence*"!;
+   ) ?>$/+meowingVolume >> 0\ | (
+      ¡<=/"mow"\!;
+   ) ?>$/+meowingVolume >> 2\ | (
+      ¡<=/"meow"\!;
+   ) ?>$/+meowingVolume >> 5\ | (
+      ¡<=/"Meow."\!;
+   ) ?>$/+meowingVolume >> 10\ | (
+      ¡<=/"Meow!!"\!;
+   ) ?>$/+meowingVolume >> 20\ | (
+      ¡<=/"MEOW!!!"\!;
+   ) >? | (
+      !<=/"Error: weird as fuck meowing volume."\!;
+   )
+ )
+)
+
