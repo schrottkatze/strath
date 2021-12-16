@@ -42,3 +42,7 @@
 ¿??$/condition\ |
  ¡<=
  
+ #sub /\ | (
+ && This code prints hello world
+ !¿??$? <= "Hello World"!;
+)
