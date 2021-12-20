@@ -1,6 +1,7 @@
-use preprocessor::preprocess;
+use super::preprocessor::preprocess;
+use super::token::Token;
 
-struct Lexer {
+pub struct Lexer {
     code: String,
     pos: usize,
     current: Option<char>,
@@ -9,9 +10,9 @@ struct Lexer {
 impl Lexer {
     pub fn new(code: String) -> Lexer {
         Lexer {
-            code,
-            pos: 1,
-            current: None,
+            code: code.clone(),
+            pos: 0,
+            current: code.chars().nth(0),
         }
     }
 
@@ -26,35 +27,29 @@ impl Lexer {
 
     pub fn tokenize(&mut self) {
         let mut tokens: Vec<Token> = vec![];
-        self.code = preprocess(self.code);
+        self.code = preprocess(self.code.clone());
         
         loop {
-            //let token = match self.current {
-                //Some('+') => Token::ADD,
-                //Some('-') => Token::SUBTRACT,
-                //Some('*') => Token::MULTIPLY,
-                //Some('/') => Token::DIVIDE,
-                //Some('(') => Token::LBRACK,
-                //Some(')') => Token::RBRACK,
-                //Some(' ') => continue,
-                //Some('\n') => continue,
-                //None => break,
-                //Some(_) => continue,
-            //};
-
-            tokens.push(match self.current {
-                Some('+') => Token::ADD,
-                Some('-') => Token::SUBTRACT,
-                Some('*') => Token::MULTIPLY,
-                Some('/') => Token::DIVIDE,
-                Some('(') => Token::LBRACK,
-                Some(')') => Token::RBRACK,
-                Some(' ') => continue,
-                Some('\n') => continue,
+            let token: Option<Token> = match self.current {
+                Some('+') => Some(Token::ADD),
+                Some('-') => Some(Token::SUBTRACT),
+                Some('*') => Some(Token::MULTIPLY),
+                Some('/') => Some(Token::DIVIDE),
+                Some('(') => Some(Token::LBRACK),
+                Some(')') => Some(Token::RBRACK),
+                Some(' ') => None,
+                Some('\n') => None,
                 None => break,
-                Some(_) => continue,
-            });
-            self.next();
+                Some(_) => None,
+            };
+
+            match token {
+                Some(token) => {
+                    tokens.push(token);
+                    self.next();
+                },
+                None => self.next(),
+            }
         }
 
         println!("{:?}", tokens);

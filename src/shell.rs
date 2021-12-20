@@ -1,12 +1,16 @@
 use std::io;
 
+use super::parsing::lexer::Lexer;
+
 pub fn run_shell() {
     'shell: loop {
         let string = get_line();
         if string.eq("q\n") || string.eq("quit\n") {
             break 'shell;
         }
-        println!("{}", string);
+        let mut lexer = Lexer::new(string);
+        lexer.tokenize();
+        //println!("{}", string);
     }
 }
 

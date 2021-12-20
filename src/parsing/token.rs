@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub enum Token {
     INT,
     FLOAT,
@@ -8,6 +9,4 @@ pub enum Token {
     LBRACK,
     RBRACK,
 }
-
-impl Token {}
 

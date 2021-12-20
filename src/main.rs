@@ -1,8 +1,8 @@
 use std::env;
 use std::fs;
 
-mod shell;
-mod parsing;
+pub mod shell;
+pub mod parsing;
 
 use parsing::preprocessor::preprocess;
 
