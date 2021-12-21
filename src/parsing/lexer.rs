@@ -1,9 +1,9 @@
 use super::preprocessor::preprocess;
 use super::token::Token;
 
-const digits: &str = "0123456789";
-const alphabet: &str = "abcdefghijklmnopqrstuvwxyz";
-const alphabet_c: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const DIGITS: &str = "0123456789";
+const ALPHABET: &str = "abcdefghijklmnopqrstuvwxyz";
+const ALPHABET_C: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 pub struct Lexer {
     code: String,
@@ -34,6 +34,7 @@ impl Lexer {
         self.code = preprocess(self.code.clone());
         
         loop {
+            let mut jump_next: bool = false;
             let token: Option<Token> = match self.current {
                 // SKIP OR BREAK
                 Some(' ') => None,
@@ -50,7 +51,8 @@ impl Lexer {
                 
                 // REST
                 Some(c) => {
-                    if digits.contains(c) {
+                    if DIGITS.contains(c) {
+                        jump_next = true;
                         Some(self.make_nr_token())
                     } else {
                         None
@@ -61,7 +63,9 @@ impl Lexer {
             match token {
                 Some(token) => {
                     tokens.push(token);
-                    self.next();
+                    if !jump_next {
+                        self.next();
+                    }
                 },
                 None => self.next(),
             }
@@ -74,7 +78,7 @@ impl Lexer {
         let mut nr: String = String::new();
         let mut dot_amount: u8 = 0;
 
-        while (self.current != None) && (digits.contains(self.current.unwrap()) || self.current.unwrap() == '.') {
+        while (self.current != None) && (DIGITS.contains(self.current.unwrap()) || self.current.unwrap() == '.') {
             if self.current.unwrap() == '.' {
                 if dot_amount == 1 {
                     panic!("Unexpected additional '.' in Number.");
@@ -83,6 +87,7 @@ impl Lexer {
             }
             nr.push(self.current.unwrap());
             self.next();
+            println!("{:?}", self.current.unwrap());
         }
 
         if dot_amount == 1 {

@@ -10,7 +10,6 @@ pub fn run_shell() {
         }
         let mut lexer = Lexer::new(string);
         lexer.tokenize();
-        //println!("{}", string);
     }
 }
 
