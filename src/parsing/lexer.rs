@@ -29,7 +29,7 @@ impl Lexer {
         };
     }
 
-    pub fn tokenize(&mut self) {
+    pub fn tokenize(&mut self) -> Vec<Token> {
         let mut tokens: Vec<Token> = vec![];
         self.code = preprocess(self.code.clone());
         
@@ -72,6 +72,7 @@ impl Lexer {
         }
 
         println!("{:?}", tokens);
+        tokens
     }
 
     fn make_nr_token(&mut self) -> Token {
@@ -87,7 +88,6 @@ impl Lexer {
             }
             nr.push(self.current.unwrap());
             self.next();
-            println!("{:?}", self.current.unwrap());
         }
 
         if dot_amount == 1 {
@@ -96,4 +96,10 @@ impl Lexer {
             return Token::INT(nr.parse::<i32>().unwrap());
         }
     }
+}
+
+#[test]
+fn test_operators() {
+    let mut lexer = Lexer::new("+-*/".to_string());
+    assert_eq!(lexer.tokenize(), vec![Token::ADD, Token::SUBTRACT, Token::MULTIPLY, Token::DIVIDE]);
 }

@@ -21,6 +21,7 @@ fn main() {
         let file = fs::read_to_string(path).expect("Couldnt read file:");
 
         let code = preprocess(file);
+        println!("{}", code);
     }
 }
 
