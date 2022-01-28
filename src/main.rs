@@ -3,6 +3,7 @@ use std::fs;
 
 pub mod shell;
 pub mod parsing;
+pub mod error;
 
 use parsing::preprocessor::preprocess;
 

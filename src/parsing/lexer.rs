@@ -1,5 +1,6 @@
 use super::preprocessor::preprocess;
 use super::token::Token;
+use crate::error::{IllegalCharacterError, Position};
 
 const DIGITS: &str = "0123456789";
 const ALPHABET: &str = "abcdefghijklmnopqrstuvwxyz";
@@ -7,26 +8,28 @@ const ALPHABET_C: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 pub struct Lexer {
     code: String,
-    pos: usize,
-    current: Option<char>,
+    pos: Position,
+    current: char,
 }
 
 impl Lexer {
     pub fn new(code: String) -> Lexer {
         Lexer {
             code: code.clone(),
-            pos: 0,
+            pos: Position { line: 0, character: 0 },
             current: code.chars().nth(0),
         }
     }
 
     pub fn next(&mut self) {
-        self.pos += 1;
-        self.current = if self.pos < self.code.len() {
-            self.code.chars().nth(self.pos)
-        } else {
-            None
-        };
+        self.pos.character += 1;
+        self.current = switch self.code.chars().nth(self.pos.character) {
+            Some(c) => {
+                let chara = ;
+                if chara == '\n' { self.pos.line += 1; };
+                chara
+            },
+            None => {}
     }
 
     pub fn tokenize(&mut self) -> Vec<Token> {
@@ -55,7 +58,7 @@ impl Lexer {
                         jump_next = true;
                         Some(self.make_nr_token())
                     } else {
-                        None
+                        IllegalCharacterError::new()
                     }
                 },
             };
