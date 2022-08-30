@@ -8,7 +8,7 @@ Rust developers hate it, Python developers fear it, and C developers make it bli
 ### Comments
 `;` all text after a semicolon will be treated as a comment  
 `&&` all text after a double and will be treated as a comment  
-`]][[` an inline command, all text between the double square brackets will be treated as a comment  
+`]][[` an inline comment, all text between the double square brackets will be treated as a comment  
 \`\`´´ this makes a multiline comment
 
 ### If, else if/elif, else
